@@ -2,6 +2,8 @@
 
 urlAutos = PRODUCTS_URL + "101.json";
 
+console.log(urlAutos);
+
 let productsArray = [];
 
 //función que recibe un array con los datos, y los muestra en pantalla a través el uso del DOM
@@ -54,5 +56,5 @@ const showMovies = (array) => {
 };
 
 const getProducts = (search) => {
-  return getJSONData(`${API_URL}&query=${search}`);
+  return getJSONData(urlAutos);
 };
