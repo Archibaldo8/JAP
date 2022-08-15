@@ -1,12 +1,18 @@
-//array donde se cargarán los datos recibidos:
+const urlAutos = PRODUCTS_URL + "101.json";
 
-urlAutos = PRODUCTS_URL + "101.json";
+document.addEventListener("DOMContentLoaded", function () {
+  getJSONData(urlAutos).then(function (resultObj) {
+    if (resultObj.status == "ok") {
+      productsArray = resultObj.data.products;
+      showProducts(productsArray);
+    }
+  });
+});
 
 console.log(urlAutos);
 
 let productsArray = [];
 
-//función que recibe un array con los datos, y los muestra en pantalla a través el uso del DOM
 async function showProducts(array) {
   let htmlContentToAppend = "";
 
@@ -25,14 +31,14 @@ async function showProducts(array) {
                     <div class="d-flex w-100 justify-content-between">
                         <div class="mb-1">
                         <h4>` +
-      product.soldCount +
+      product.name +
       `</h4> 
                         <p> ` +
       product.description +
       `</p> 
                         </div>
                         <small class="text-muted">` +
-      product.name +
+      product.soldCount +
       ` artículos</small> 
                     </div>
 
@@ -40,21 +46,6 @@ async function showProducts(array) {
             </div>
         </div>
         `;
-    document.getElementById("container").innerHTML = htmlContentToAppend;
+    document.getElementById("prod-container").innerHTML = htmlContentToAppend;
   }
 }
-
-const showMovies = (array) => {
-  // ## INICIO BLOQUE 3 ##
-  debugger;
-  const container = document.getElementById("container");
-  container.innerHTML = "";
-  for (let product of array) {
-    container.innerHTML += getCardHTML(product.poster_path, product.title);
-  }
-  // ## FIN BLOQUE 3 ##
-};
-
-const getProducts = (search) => {
-  return getJSONData(urlAutos);
-};
