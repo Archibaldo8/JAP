@@ -40,7 +40,7 @@ async function showProducts(array) {
             </div>
         </div>
         `;
-    document.getElementById("container").innerHTML = htmlContentToAppend;
+    document.getElementById("containercito").innerHTML = htmlContentToAppend;
   }
 }
 
