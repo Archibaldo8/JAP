@@ -1,3 +1,5 @@
+//array donde se cargarán los datos recibidos:
+
 const urlAutos = PRODUCTS_URL + "101.json";
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -13,6 +15,7 @@ console.log(urlAutos);
 
 let productsArray = [];
 
+//función que recibe un array con los datos, y los muestra en pantalla a través el uso del DOM
 async function showProducts(array) {
   let htmlContentToAppend = "";
 
