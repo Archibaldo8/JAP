@@ -1,4 +1,16 @@
+document.addEventListener("DOMContentLoaded", ()=>)
 email = document.getElementById("floatingInput");
-pass1 = document.getElementById("floatingPassword");
+pass = document.getElementById("floatingPassword");
 
-function loginValidation() {}
+function loginValidation() {
+
+    
+
+
+}
+
+
+function redirect(){
+    window.location.href = "http://www.w3schools.com"
+
+}
