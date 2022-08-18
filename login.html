@@ -10,23 +10,19 @@
       integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
       crossorigin="anonymous"
     />
+    <link href="css/styles.css" rel="stylesheet" />
   </head>
 
   <body>
     <main
       class="form-signin text-center row justify-content-center col justify-content-center"
     >
-      <form class="w-25 center-div">
-        <img
-          class="mb-4 w-100"
-          src="C:\Users\Leandro\Desktop\JAP 2022\GIT\JAP\img\login.png"
-          alt=""
-          width="72"
-          height="57"
-        />
+      <container class="col-md-4 center-div"> 
+      <form class="center-div justify-content-center">
+        <img class="mb-4 w-100" src="\img\login.png" alt="" width="col-md-1" />
         <h1 class="h3 mb-3 fw-bold">Inicio de sesión</h1>
 
-        <div class="form-floating-sm">
+        <div class="container-md form-floating-sm">
           <input
             type="email"
             class="form-control"
@@ -35,10 +31,10 @@
           />
           <label for="floatingInput">Email</label>
         </div>
-        <div class="form-floating-sm">
+        <div class="container-md form-floating-sm">
           <input
             type="password"
-            class="form-control col-sm"
+            class="form-control"
             id="floatingPassword"
             placeholder="Password"
           />
@@ -52,7 +48,10 @@
         </div>
         <button class="btn btn-primary" type="submit">Ingresar</button>
         <p class="mt-5 mb-3 text-muted">© 2017–2021</p>
+      
       </form>
+      </container>
+
     </main>
     <footer class="text-muted">
       <div class="container">
