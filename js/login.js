@@ -7,11 +7,14 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-function loginValidation(correo, pass) {
-  if (!(correo.value == "") && !(pass.value == "")) {
+function loginValidation(fields) {
+for field in fieldList 
+
+  if (!(field.value == "") {
     return alert("bienvenido rey"), redirect();
   } else {
-    return alert("no es por ahi guri");
+    //   return (correo.className += " is-invalid");
+    return alert("no es por ahi crack");
   }
 }
 

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Bootstrap demo</title>
+    <title>Bienvenido a JAP e-commerce</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -16,9 +16,15 @@
     />
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/styles.css" rel="stylesheet" />
+    <meta
+      name="google-signin-client_id"
+      content="246593317874-6b9kumicl0n8tid9clft8e98t68tc338.apps.googleusercontent.com"
+    />
   </head>
 
   <body>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <main
       class="form-signin text-center row justify-content-center col justify-content-center"
     >
@@ -32,7 +38,7 @@
               type="email"
               class="form-control"
               id="floatingInput"
-              placeholder="name@example.com"
+              placeholder="nombre@ejemplo.com"
             />
             <label for="floatingInput">Email</label>
           </div>
@@ -46,9 +52,20 @@
             <label for="floatingPassword">Contraseña</label>
           </div>
 
-          <button class="btn btn-primary" type="submit" id="regBtn">
-            Ingresar
-          </button>
+          <div class="container align-items-center" id="regBtnLogin">
+            <button class="btn btn-primary" type="submit" id="regBtn">
+              Ingresar
+            </button>
+          </div>
+
+          <!-- google signin -->
+
+          <div
+            class="g-signin2 row justify-content-center col justify-content-center"
+            data-onsuccess="onSignIn"
+          ></div>
+
+          <!-- google signin -->
           <p class="mt-5 mb-3 text-muted">© 2017–2021</p>
         </form>
       </container>
