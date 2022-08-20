@@ -60,10 +60,17 @@
 
           <!-- google signin -->
 
+          <script
+            src="https://accounts.google.com/gsi/client"
+            async
+            defer
+          ></script>
           <div
-            class="g-signin2 row justify-content-center col justify-content-center"
-            data-onsuccess="onSignIn"
+            id="g_id_onload"
+            data-client_id="246593317874-6b9kumicl0n8tid9clft8e98t68tc338"
+            data-callback="handleCredentialResponse"
           ></div>
+          <div class="g_id_signin" data-type="standard"></div>
 
           <!-- google signin -->
           <p class="mt-5 mb-3 text-muted">© 2017–2021</p>
