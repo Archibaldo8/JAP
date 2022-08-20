@@ -1,22 +1,24 @@
 document.addEventListener("DOMContentLoaded", () => {
-    
+  regBtn.addEventListener("click", () => {
+    let email = document.getElementById("floatingInput");
+    let pass1 = document.getElementById("floatingPassword");
 
-})
-email = document.getElementById("floatingInput");
-pass = document.getElementById("floatingPassword");
+    loginValidation(email, pass1);
+  });
+});
 
-function loginValidation() {
-
-
-
+function loginValidation(correo, pass) {
+  if (!(correo.value == "") && !(pass.value == "")) {
+    return alert("bienvenido rey"), redirect();
+  } else {
+    return alert("no es por ahi guri");
+  }
 }
 
-function loginWithGoogle() {
+// function loginWithGoogle() {
 
-}
+// }
 
-
-function redirect(){
-    window.location.href = "http://www.w3schools.com"
-
+function redirect() {
+  window.location.href = "index-after-login.html";
 }
