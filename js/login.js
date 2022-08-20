@@ -1,11 +1,17 @@
-document.addEventListener("DOMContentLoaded", ()=>)
+document.addEventListener("DOMContentLoaded", () => {
+    
+
+})
 email = document.getElementById("floatingInput");
 pass = document.getElementById("floatingPassword");
 
 function loginValidation() {
 
-    
 
+
+}
+
+function loginWithGoogle() {
 
 }
 
