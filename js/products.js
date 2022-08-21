@@ -11,10 +11,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-console.log(urlAutos);
-
-let productsArray = [];
-
 //función que recibe un array con los datos, y los muestra en pantalla a través el uso del DOM
 async function showProducts(array) {
   let htmlContentToAppend = "";
@@ -35,6 +31,10 @@ async function showProducts(array) {
                         <div class="mb-1">
                         <h4>` +
       product.name +
+      ` - ` +
+      product.cost +
+      ` ` +
+      product.currency +
       `</h4> 
                         <p> ` +
       product.description +
