@@ -135,6 +135,9 @@ footer p {
   border-color: #fff transparent transparent transparent;
 }
 
+body {
+ background-color: rgb(250, 250, 250);  
+}
 #regBtnLogin {
   height: 100px;
 }
