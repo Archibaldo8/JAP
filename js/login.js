@@ -9,7 +9,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function loginValidation(correo, pass) {
   if (!(correo.value == "") && !(pass.value == "")) {
-    return alert("bienvenido rey"), redirect();
+    return (
+      alert("bienvenido rey"),
+      localStorage.setItem("loginID", correo.value),
+      redirect()
+    );
   } else {
     return (
       alert("no es por ahi crack"),
