@@ -13,6 +13,10 @@ let showSpinner = function () {
   document.getElementById("spinner-wrapper").style.display = "block";
 };
 
+//  let loginIDTag = document.getElementsByTagName("nav")[0];
+
+// loginIDTag.children[0].appendChild(html);
+
 let hideSpinner = function () {
   document.getElementById("spinner-wrapper").style.display = "none";
 };
