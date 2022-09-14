@@ -68,7 +68,7 @@ function showProductsList() {
     ) {
       htmlContentToAppend +=
         `
-        <div class="list-group-item list-group-item-action">
+        <div onclick ="setProdID( ${product.id})" class="list-group-item list-group-item-action cursor-active">
             <div class="row">
                 <div class="col-3">
                     <img src="` +
@@ -110,7 +110,7 @@ function sortAndShowProducts(sortCriteria, productsArray) {
     currentProductsArray = productsArray;
   }
 
-  //
+  //currentProductsArray
   //currentproductsArray
   //
 
@@ -120,6 +120,11 @@ function sortAndShowProducts(sortCriteria, productsArray) {
   );
 
   showProductsList();
+}
+
+function setProdID(id) {
+  localStorage.setItem("prodID", id);
+  window.location = "product-info.html";
 }
 
 document.addEventListener("DOMContentLoaded", function () {

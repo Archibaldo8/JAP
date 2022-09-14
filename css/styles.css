@@ -1,6 +1,6 @@
 .jumbotron,
 .card-body,
-.container,
+
 .site-header {
   font-family: "Raleway", serif !important;
 }
@@ -9,10 +9,30 @@
   font-weight: bold;
 }
 
+.container {font-family: "Raleway", serif !important;
+
+  height: 100%;
+}
 nav a {
   text-decoration: none;
 }
 
+#info-container {
+  top: 50%;
+}
+
+
+hr {
+  width: 100%
+}
+
+h1 {
+
+  height: 50px;
+  justify-content: center;
+  top: 50%;
+
+}
 .bd-placeholder-img {
   font-size: 1.125rem;
   text-anchor: middle;
@@ -27,6 +47,7 @@ nav a {
     font-size: 3.5rem;
   }
 }
+
 
 .jumbotron {
   height: 50vh;
@@ -46,6 +67,10 @@ nav a {
     padding-top: 6rem;
     padding-bottom: 6rem;
   }
+}
+
+.secondaryImage {
+  width: 200px;
 }
 
 .jumbotron p:last-child {
@@ -116,6 +141,7 @@ footer p {
   cursor: pointer;
 }
 
+
 .left {
   float: left;
   padding: 4px;
@@ -136,7 +162,7 @@ footer p {
 }
 
 body {
- background-color: rgb(250, 250, 250);  
+  background-color: rgb(250, 250, 250);
 }
 #regBtnLogin {
   height: 100px;
