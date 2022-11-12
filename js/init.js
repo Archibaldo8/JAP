@@ -21,6 +21,10 @@ let hideSpinner = function () {
   document.getElementById("spinner-wrapper").style.display = "none";
 };
 
+function clearUser() {
+  localStorage.setItem("loginID", "");
+}
+
 let getJSONData = function (url) {
   let result = {};
   showSpinner();

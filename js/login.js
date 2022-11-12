@@ -1,11 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
-  regBtn.addEventListener("click", () => {
-    let email = document.getElementById("floatingInput");
-    let pass1 = document.getElementById("floatingPassword");
 
-    loginValidation(email, pass1);
-  });
-});
 
 function loginValidation(correo, pass) {
   if (!(correo.value == "") && !(pass.value == "")) {
@@ -21,6 +14,11 @@ function loginValidation(correo, pass) {
       (pass.className += " is-invalid")
     );
   }
+}
+
+
+function redirect() {
+  window.location.href = "index-after-login.html";
 }
 
 // function loginWithGoogle() {
@@ -39,6 +37,12 @@ function handleCredentialResponse(response) {
 
 // }
 
-function redirect() {
-  window.location.href = "index-after-login.html";
-}
+
+document.addEventListener("DOMContentLoaded", () => {
+  regBtn.addEventListener("click", () => {
+    let email = document.getElementById("floatingInput");
+    let pass1 = document.getElementById("floatingPassword");
+
+    loginValidation(email, pass1);
+  });
+});

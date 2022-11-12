@@ -41,17 +41,274 @@
             <li class="nav-item">
               <a class="nav-link" href="sell.html">Vender</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="index.html" id="loginID"></a>
-            </li>
+            <div class="dropdown">
+             <a class="nav-link nav-item dropdown-toggle" href="#" id="loginID" data-bs-toggle="dropdown" aria-expanded="false"></a>
+  <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuLink">
+    <li><a class="dropdown-item" href="cart.html">Mi carrito</a></li>
+    <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
+    <li><a class="dropdown-item" onclick="clearUser()" href="index.html">Cerrar sesión</a></li>
+  </ul>
           </ul>
         </div>
       </div>
     </nav>
     <main>
       <div class="container">
+        <h5 class="topMargin">Articulos a comprar</h5>
+        </div>
+
+         <form action="#"
+        method="get"
+        class="row mt-4 needs-validation"
+        novalidate
+        id="form"
+        
+        >
+      
+      <div class="container" id="cart-container">
         <div class="alert alert-danger text-center" role="alert">
           <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
+        </div>
+
+     
+
+        <!-- envio -->
+
+        </div>
+
+       
+
+
+           <div class ="container">
+
+
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-3" id="tipoDeEnvio">
+      
+        <h5 class="topMargin">Tipo de envio</h5>
+       
+        <input type="radio" class = "form-check-input" name="envio" value="15" onclick="calcularCostoEnvio() ,calculateTotal()" required><label for="envio">Premium 2 a 5 dîas(15%)</label>
+        <br>
+        <input type="radio" class = "form-check-input" name="envio" value="7"onclick="calcularCostoEnvio(), calculateTotal()" required><label for="envio">Express 5 a 8 dîas(7%)</label>
+        <br>
+        <input type="radio" class = "form-check-input" name="envio" value="5"onclick="calcularCostoEnvio(), calculateTotal()" required><label for="envio">Standard 12 a 15 dîas(5%)</label>
+         <div
+                                    class="text-danger d-none"
+                                    id="notSeleccionadoEnvio"
+                                >
+                                    Debe seleccionar una forma de envío
+                                </div>
+
+        </div>
+
+       
+                                <br>
+        
+    <div class = "col-9" id="direccionEnvio">
+
+        <h5 class="topMargin">Dirección de envio</h5>
+
+      <div class="row">
+
+     <div class = "col-md-5"><p class="topMargin">Calle</p> <input type="text" class="form-control" required> <div class="valid-feedback">Válido.</div>
+                                <div class="invalid-feedback">
+                                    Debe ingresar una calle.
+                                </div> 
+                              </div>
+  <div class = "col-md-2"><p class="topMargin">Numero</p> <input type="text" class="form-control" required > <div class="valid-feedback">Válido.</div>
+                                <div class="invalid-feedback">
+                                    Debe ingresar un número.
+                                </div> 
+                              </div> </div>
+  <div class = "col-md-5"><p class="topMargin">Esquina</p> <input type="text" class="form-control" required > <div class="valid-feedback">Válido.</div>
+                                <div class="invalid-feedback">
+                                    Debe ingresar una esquina.
+                                </div> 
+                              </div> 
+                            </div>
+
+
+        <!-- envio -->
+<br>
+
+
+
+    <!-- Subtotal -->
+<div class="container">
+
+  <h5>Costos</h5>
+
+<div class = "list-group-item" >
+<div class="row">
+<div class="col-6"> <p class="fs-6">Subtotal</p> </div>
+<div class="col-6"><p class="text-end" >USD  <span id="Subtotal"></span></p></div>
+<p class="text-muted fs-6"> Costo unitario del producto por cantidad</p>
+
+</div>
+
+    <!-- Costo de Envio -->
+
+
+</div>
+
+<div class = "list-group-item" >
+<div class="row">
+<div class="col-6"> <p class="fs-6">Costo de envío</p> </div>
+<div class="col-6"><p class="text-end" >USD  <span id="CostoEnvio">0</span></p></div>
+<p class="text-muted fs-6"> Según el tipo de envío</p>
+
+</div>
+
+    <!-- Total -->
+
+
+</div>
+
+<div class = "list-group-item" >
+<div class="row">
+<div class="col-6"> <p class="fs-6">Total</p> </div>
+<div class="col-6"><p class="text-end bold" >USD  <span id="Total"></span></p></div>
+<p class="text-muted fs-6">   </p>
+
+</div>
+
+</div>
+<div class="container">
+
+  <h5>Forma de Pago</h5>
+
+<p> <span id = "medioPagoShown"> No se ha seleccionado ninguna forma de pago </span>  
+  <button type="button" 
+          class="btn btn-link ps-0"
+          data-bs-toggle="modal"
+          data-bs-target="#modalPago"
+          id="probar"
+          
+>
+Seleccionar
+        </button><div
+                                    class="text-danger d-none"
+                                    id="notSeleccionadoPago"
+                                >
+                                    Debe seleccionar un medio de pago
+                                </div></p>
+
+
+</div>
+
+<button class="btn btn-primary w-100" type="submit">
+                                Finalizar Compra
+                            </button>
+                            
+  </div>
+  </div>
+
+  <!-- modal -->
+
+
+  <div
+            class="modal fade"
+            id="modalPago"
+            tabindex="-1"
+            aria-hidden="true"
+        >
+            <div class="container modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title fs-5">
+                            Forma de pago
+                        </h5>
+                      
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                        ></button>
+                    </div>
+                    <div class="modal-body">
+
+
+                      <div class="container  input-group mb-3">
+                        <div id = "PagoTarjeta"> 
+                          <p><input type="radio" name="pago" class = "form-check-input" onclick = "setMedioPago()" value = "Tarjeta de Crédito">  Tarjeta de Crédito</p> 
+                          <br>
+
+                          <div class="row">
+
+                            <div class="col">  <p>Numero de tarjeta</p> <input type="text" class="completar form-control" required></div> <div class="valid-feedback">Válido.</div>
+                                <div class="invalid-feedback">
+                                    Debe ingresar un número.
+                                </div></div>
+                            <div class="col">  <p>Codigo de seg.</p> <input type="text" class="completar form-control" required> <div class="valid-feedback">Válido.</div>
+                                <div class="invalid-feedback">
+                                    Debe ingresar un número.
+                                </div></div>
+                                 <div class="col">  <p>Vencimiento (AA/MM/DD) </p> <input type="text" class="completar form-control" required> <div class="valid-feedback">Válido.</div>
+                                <div class="invalid-feedback">
+                                    Debe ingresar una fecha.
+                                </div></div>
+
+
+                          </div>
+
+                         
+                        </div>
+                        <hr>
+
+                        <div id = "PagoTransferencia">
+                          <p><input type="radio" name="pago" class = "form-check-input" onclick = "setMedioPago()" value = "Transferencia Bancaria" required>Transferencia Bancaria</p>
+                          <br>
+                          
+                          <div class="col"></div> <p>Numero de Cuenta</p> <input type="text" class="completar form-control" required> <div class="valid-feedback">Válido.</div>
+                                <div class="invalid-feedback">
+                                    Debe ingresar un número.
+                                </div></div>
+                          
+                        
+                        </div>
+
+                      </div>
+                        
+                    </div>
+                    <div class="modal-footer" id="modalID">
+                        <div class="form-check">
+      
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="alert alert-success d-none" role="alert">
+  <p><strong>Compra realizada con exito!.</strong></p> 
+</div>
+
+ </form>
+
+
+
+
+          
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
         </div>
       </div>
     </main>
@@ -84,5 +341,8 @@
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/init.js"></script>
     <script src="js/cart.js"></script>
+
+    
   </body>
+  
 </html>

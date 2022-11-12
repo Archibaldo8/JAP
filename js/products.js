@@ -110,10 +110,6 @@ function sortAndShowProducts(sortCriteria, productsArray) {
     currentProductsArray = productsArray;
   }
 
-  //currentProductsArray
-  //currentproductsArray
-  //
-
   currentProductsArray = sortProducts(
     currentSortCriteria,
     currentProductsArray

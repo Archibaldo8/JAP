@@ -15,6 +15,10 @@
     <link href="css/font-awesome.min.css" rel="stylesheet" />
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/styles.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
   </head>
 
   <body>
@@ -42,9 +46,19 @@
             <li class="nav-item">
               <a class="nav-link" href="sell.html">Vender</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="index.html" id="loginID"></a>
-            </li>
+
+<!-- dropdown -->
+
+           <div class="dropdown">
+              <a class="nav-link nav-item dropdown-toggle" href="#" id="loginID" data-bs-toggle="dropdown" aria-expanded="false"></a>
+  <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuLink">
+    <li><a class="dropdown-item" href="cart.html">Mi carrito</a></li>
+    <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
+    <li><a class="dropdown-item" onclick="clearUser()" href="index.html">Cerrar sesión</a></li>
+  </ul>
+
+  <!-- dropdown -->
+
           </ul>
         </div>
       </div>
@@ -54,7 +68,61 @@
         <div class="alert alert-danger text-center" role="alert">
           <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
         </div>
-        <div class="container" id="comments-container"></div>
+      </div>
+      <div class="container">
+        <h5 class="topMargin">Comentarios relacionados</h5>
+        <div id="comments-container"></div>
+      </div>
+      <div class="container">
+        <div id="contacto">
+          <h5 class="topMargin">Dejar un comentario:</h5>
+          <form action="#" method="GET">
+            <div class="form-group">
+              <label for="tema">Tu puntuación:</label>
+
+              <div class="rating">
+                <div class="wrapper">
+                  <input type="checkbox" id="st1" value="1" />
+                  <label for="st1"></label>
+                  <input type="checkbox" id="st2" value="2" />
+                  <label for="st2"></label>
+                  <input type="checkbox" id="st3" value="3" />
+                  <label for="st3"></label>
+                  <input type="checkbox" id="st4" value="4" />
+                  <label for="st4"></label>
+                  <input type="checkbox" id="st5" value="5" />
+                  <label for="st5"></label>
+                </div>
+              </div>
+
+              <label for="cuerpo">Tu opinion:</label>
+
+              <textarea
+                class="form-control"
+                id="cuerpo"
+                name="cuerpo"
+                rows="4"
+              ></textarea>
+
+              <button
+                type="submit"
+                class="btn btn-secondary btn-lg mb-1 topMargin"
+              >
+                Enviar
+              </button>
+            </div>
+
+            <br />
+          </form>
+        </div>
+
+        <!-- productos relacionados -->
+
+        <h5 class="topMargin">Productos relacionados</h5>    
+        <div class = "row" id="productos-relacionados"></div>
+
+        <!-- productos relacionados -->
+        
       </div>
     </main>
     <footer class="text-muted">
@@ -88,3 +156,4 @@
     <script src="js/product-info.js"></script>
   </body>
 </html>
+

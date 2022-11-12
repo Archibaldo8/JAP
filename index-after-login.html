@@ -41,12 +41,13 @@
             <li class="nav-item">
               <a class="nav-link" href="sell.html">Vender</a>
             </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                id="loginID"
-                href="index-after-login.html"
-              ></a>
+            <div class="dropdown">
+             <a class="nav-link nav-item dropdown-toggle" href="#" id="loginID" data-bs-toggle="dropdown" aria-expanded="false"></a>
+  <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuLink">
+    <li><a class="dropdown-item" href="cart.html">Mi carrito</a></li>
+    <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
+    <li><a class="dropdown-item" onclick="clearUser()" href="index.html">Cerrar sesión</a></li>
+  </ul>
             </li>
           </ul>
         </div>
@@ -145,3 +146,4 @@
     <script src="js/init.js"></script>
   </body>
 </html>
+
