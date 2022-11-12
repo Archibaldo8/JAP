@@ -207,6 +207,8 @@ document.addEventListener("DOMContentLoaded", function (e) {
       calculateSubtotal();
       calcularCostoEnvio();
       calculateTotal();
+
+      ;
       console.log(forms);
     }
   });

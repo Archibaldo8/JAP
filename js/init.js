@@ -21,6 +21,12 @@ let hideSpinner = function () {
   document.getElementById("spinner-wrapper").style.display = "none";
 };
 
+function setUser() {
+
+  let loginID = localStorage.getItem("loginID")
+  document.getElementById("loginID").text = loginID;
+}
+
 function clearUser() {
   localStorage.setItem("loginID", "");
 }
@@ -49,3 +55,6 @@ let getJSONData = function (url) {
       return result;
     });
 };
+
+
+setUser();
