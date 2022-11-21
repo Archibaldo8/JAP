@@ -22,14 +22,16 @@ let hideSpinner = function () {
 };
 
 function setUser() {
-
-  let loginID = localStorage.getItem("loginID")
+  let loginID = localStorage.getItem("loginID");
   document.getElementById("loginID").text = loginID;
 }
 
 function clearUser() {
   localStorage.setItem("loginID", "");
+  localStorage.removeItem("USER");
 }
+
+
 
 let getJSONData = function (url) {
   let result = {};
@@ -55,6 +57,5 @@ let getJSONData = function (url) {
       return result;
     });
 };
-
 
 setUser();

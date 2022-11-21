@@ -1,22 +1,8 @@
 const urlINFO = PRODUCT_INFO_URL + localStorage.getItem("prodID") + ".json";
 const urlCOMMENTS =
   PRODUCT_INFO_COMMENTS_URL + localStorage.getItem("prodID") + ".json";
-
 const agregarCarrito = document.getElementById("agregarCarrito");
-
-function loadImagesArrayHTML(imagesArray) {
-  let htmlContentPart = "";
-  for (i = 1; i < imagesArray.length; i++) {
-    let img = imagesArray[i];
-
-    htmlContentPart +=
-      `<div class="column secondaryImage">
-        <img src =" ` +
-      img +
-      `" alt="product image" class="img-thumbnail"></div>`;
-  }
-  return htmlContentPart;
-}
+const sendCommentBtn = document.getElementById("enviar-comentario");
 
 function loadStarRating(rating) {
   let checkedStarCount = rating;
@@ -80,10 +66,17 @@ function showProductInfo(info) {
         <div class="list-group-item">
             <div class="row">
                 <div class="col-xl-6 center-div">
-                    <img src="` +
-    info.images[0] +
-    `" alt="product image" class="img-thumbnail">
+                <div
+                id="carouselExampleIndicators"
+                class = "carousel slide pointer-event"
+                data-bs-ride = "carousel">
+                 ` +
+    loadImagesCarouselHTML(info.images) +
+    `
+                    
                 </div>
+                </div>
+
                 <div class="col">
                     <div class="w-100 justify-content-between">
                         <div class="mb-1">
@@ -119,9 +112,7 @@ function showProductInfo(info) {
                 <div class="d-flex w-100 justify-content-between">
                         <div class="mb-1 row">
                         
-    <div class = "row">` +
-    loadImagesArrayHTML(info.images) +
-    `</div>
+    
     </p> 
                         </div> 
                     </div>
@@ -131,6 +122,118 @@ function showProductInfo(info) {
         `;
   document.getElementById("info-container").innerHTML = htmlContentToAppend;
 }
+
+/// DESAFIATE 3 ///
+
+function addComment() {
+  let commentInput = document.getElementById("cuerpo").value;
+  let starRatingInput = document.querySelector(
+    "input[name=star-rating]:checked"
+  ).value;
+  let loginID = localStorage.getItem("loginID");
+
+  htmlContentToAppend =
+    `        <div 
+    class="list-group-item">
+            <div 
+            class="row">
+                <div 
+                class="col">
+                    <div 
+                    class="d-flex w-100 justify-content-between">
+                        <div 
+                        class="mb-1">
+                        <p>` +
+    loginID +
+    `  ` +
+    loadStarRating(starRatingInput) +
+    `</p>
+    
+        <hr>
+                        <small class="text-muted"> ` +
+    commentInput +
+    `
+                        </div> 
+
+
+                </div>
+              
+    </small> 
+                        </div>
+                     </div>  
+
+        </div>`;
+
+  document.getElementById("comments-container").innerHTML +=
+    htmlContentToAppend;
+}
+
+///  DESAFIATE 4 ///
+
+function loadImagesCarouselHTML(imagesArray) {
+  let htmlContentPartImages =
+    `
+    
+    <div class = "carousel-inner">
+  
+  <div 
+  class="carousel-item active">
+  <img src =" ` +
+    imagesArray[0] +
+    `" alt="product image" class="d-block w-100"></div>`;
+
+  for (i = 1; i < imagesArray.length; i++) {
+    let img = imagesArray[i];
+
+    htmlContentPartImages +=
+      `
+     
+      <div class="carousel-item">
+        <img src =" ` +
+      img +
+      `" alt="product image" class="d-block w-100"></div>`;
+  }
+
+  htmlContentPartCarouselControl = ` <button 
+    class="carousel-control-prev" 
+    type="button" 
+    data-bs-target="#carouselExampleIndicators" 
+    data-bs-slide="prev">
+
+    <span 
+    class="carousel-control-prev-icon" 
+    aria-hidden="true">
+    </span>
+
+    <span 
+    class="visually-hidden">
+    Previous
+    </span>
+  </button>
+  
+    <button 
+    class="carousel-control-next" 
+    type="button" 
+    data-bs-target="#carouselExampleIndicators" 
+    data-bs-slide="next">
+
+    <span 
+    class="carousel-control-next-icon" 
+    aria-hidden="true">
+    </span>
+
+    <span 
+    class="visually-hidden">
+    Next
+    </span>
+  </button>`;
+
+  htmlContentPartCarouselControl += `</div>`;
+
+  return htmlContentPartImages + htmlContentPartCarouselControl;
+}
+
+/// DESAFIATE 5 ///
 
 async function addToCart() {
   let preProduct = await getJSONData(urlINFO);

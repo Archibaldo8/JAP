@@ -47,20 +47,38 @@
               <a class="nav-link" href="sell.html">Vender</a>
             </li>
 
-<!-- dropdown -->
+            <!-- dropdown -->
 
-           <div class="dropdown">
-              <a class="nav-link nav-item dropdown-toggle" href="#" id="loginID" data-bs-toggle="dropdown" aria-expanded="false"></a>
-  <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuLink">
-    <li><a class="dropdown-item" href="cart.html">Mi carrito</a></li>
-    <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
-    <li><a class="dropdown-item" onclick="clearUser()" href="index.html">Cerrar sesión</a></li>
-  </ul>
-
+            <div class="dropdown">
+              <a
+                class="nav-link nav-item dropdown-toggle"
+                href="#"
+                id="loginID"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              ></a>
+              <ul
+                class="dropdown-menu dropdown-menu-dark"
+                aria-labelledby="dropdownMenuLink"
+              >
+                <li>
+                  <a class="dropdown-item" href="cart.html">Mi carrito</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    onclick="clearUser()"
+                    href="index.html"
+                    >Cerrar sesión</a
+                  >
+                </li>
+              </ul>
             </div>
 
-  <!-- dropdown -->
-
+            <!-- dropdown -->
           </ul>
         </div>
       </div>
@@ -84,16 +102,16 @@
 
               <div class="rating">
                 <div class="wrapper">
-                  <input type="checkbox" id="st1" value="1" />
-                  <label for="st1"></label>
-                  <input type="checkbox" id="st2" value="2" />
-                  <label for="st2"></label>
-                  <input type="checkbox" id="st3" value="3" />
-                  <label for="st3"></label>
-                  <input type="checkbox" id="st4" value="4" />
-                  <label for="st4"></label>
-                  <input type="checkbox" id="st5" value="5" />
+                  <input type="radio" id="st5" value="5" name="star-rating" />
                   <label for="st5"></label>
+                  <input type="radio" id="st4" value="4" name="star-rating" />
+                  <label for="st4"></label>
+                  <input type="radio" id="st3" value="3" name="star-rating" />
+                  <label for="st3"></label>
+                  <input type="radio" id="st2" value="2" name="star-rating" />
+                  <label for="st2"></label>
+                  <input type="radio" id="st1" value="1" name="star-rating" />
+                  <label for="st1"></label>
                 </div>
               </div>
 
@@ -107,8 +125,10 @@
               ></textarea>
 
               <button
-                type="submit"
+                type="button"
                 class="btn btn-secondary btn-lg mb-1 topMargin"
+                id="enviar-comentario"
+                onclick="addComment()"
               >
                 Enviar
               </button>
@@ -120,11 +140,10 @@
 
         <!-- productos relacionados -->
 
-        <h5 class="topMargin">Productos relacionados</h5>    
-        <div class = "row" id="productos-relacionados"></div>
+        <h5 class="topMargin">Productos relacionados</h5>
+        <div class="row" id="productos-relacionados"></div>
 
         <!-- productos relacionados -->
-        
       </div>
     </main>
     <footer class="text-muted">
@@ -158,4 +177,3 @@
     <script src="js/product-info.js"></script>
   </body>
 </html>
-

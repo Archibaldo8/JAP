@@ -39,10 +39,14 @@ function handleCredentialResponse(response) {
 
 
 document.addEventListener("DOMContentLoaded", () => {
+
+    localStorage.setItem("USER", "");
+
   regBtn.addEventListener("click", () => {
     let email = document.getElementById("floatingInput");
     let pass1 = document.getElementById("floatingPassword");
 
     loginValidation(email, pass1);
+    
   });
 });
