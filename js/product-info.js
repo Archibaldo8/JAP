@@ -1,6 +1,5 @@
-const urlINFO = PRODUCT_INFO_URL + localStorage.getItem("prodID") + ".json";
-const urlCOMMENTS =
-  PRODUCT_INFO_COMMENTS_URL + localStorage.getItem("prodID") + ".json";
+const urlINFO = PRODUCT_INFO_URL + localStorage.getItem("prodID")+".json";
+const urlCOMMENTS = PRODUCT_INFO_COMMENTS_URL + localStorage.getItem("prodID")+".json";
 const agregarCarrito = document.getElementById("agregarCarrito");
 const sendCommentBtn = document.getElementById("enviar-comentario");
 

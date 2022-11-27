@@ -167,19 +167,23 @@ function calculateSubtotal() {
   document.getElementById("Subtotal").innerHTML = Subtotal.toFixed(1);
 }
 
-function calcularCostoEnvio() {
+function tipoEnvio() {
+  multiplicadorEnvio = 0;
   if (!(document.querySelector("input[name=envio]:checked") === null)) {
     multiplicadorEnvio =
       document.querySelector("input[name=envio]:checked").value / 100;
-  } else {
-    multiplicadorEnvio = 0;
   }
+  return multiplicadorEnvio;
+}
 
+function calcularCostoEnvio() {
+  let multiplicadorEnvio = tipoEnvio();
   let Subtotal = parseInt(document.getElementById("Subtotal").innerText);
   let CostoEnvio = Subtotal * multiplicadorEnvio;
   document.getElementById("CostoEnvio").innerHTML = CostoEnvio.toFixed(1);
 
   console.log(CostoEnvio);
+  return CostoEnvio;
 }
 
 function calculateTotal() {
@@ -189,6 +193,7 @@ function calculateTotal() {
   let Total = Subtotal + CostoEnvio;
 
   document.getElementById("Total").innerHTML = Total;
+  return Total;
 }
 
 function setMedioPago() {
@@ -239,6 +244,24 @@ function validateNonEmptyQty() {
   return bool;
 }
 
+function checkout() {
+  let checkoutData = {
+    user: localStorage.getItem("loginID"),
+    cartItems: JSON.parse(localStorage.getItem("cart")),
+    shipmentInfo: {
+      address: {
+        street: document.getElementById("calle").value,
+        number: document.getElementById("numero").value,
+        crossStreet: document.getElementById("esquina").value,
+      },
+      type: tipoEnvio(),
+      price: calcularCostoEnvio(),
+    },
+    total: calculateTotal(),
+  };
+  postData(CHECKOUT, checkoutData);
+}
+
 // Validacion de campos
 
 Array.prototype.slice.call(forms).forEach(function (form) {
@@ -260,6 +283,8 @@ Array.prototype.slice.call(forms).forEach(function (form) {
       } else {
         event.preventDefault();
         document.getElementsByClassName("alert")[0].classList.remove("d-none");
+
+        checkout();
 
         setTimeout(function () {
           window.location.reload();
